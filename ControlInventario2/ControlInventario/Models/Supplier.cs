@@ -9,7 +9,7 @@ namespace ControlInventario.Models
     {
         public int Id { get; set; }
 
-        public int SpplierCode { get; set; }
+        public int SupplierCode { get; set; }
         public string SupplierName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }

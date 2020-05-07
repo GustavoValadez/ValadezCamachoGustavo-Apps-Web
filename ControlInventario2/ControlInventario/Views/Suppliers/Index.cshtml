@@ -8,27 +8,35 @@
     <div class="masthead-content space">
         <div class="container">
 
-            <h2>Index</h2>
+            <h2>Proveedores</h2>
 
             <p>
-                @Html.ActionLink("Create New", "Create")
+                @*@Html.ActionLink("Crear Nuevo", "Create")*@
+                <a href="@Url.Action("Create","Suppliers")" class="btn btn-sm btn-primary m-2">Nuevo Proveedor</a>
+
             </p>
+
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.SpplierCode)
+                        @*@Html.DisplayNameFor(model => model.SupplierCode)*@
+                        Código del Proveedor
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.SupplierName)
+                        @*@Html.DisplayNameFor(model => model.SupplierName)*@
+                        Nombre del Proveedor
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Email)
+                        @*@Html.DisplayNameFor(model => model.Email)*@
+                        Correo Electrónico
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Phone)
+                        @*@Html.DisplayNameFor(model => model.Phone)*@
+                        Teléfono
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Address)
+                        @*@Html.DisplayNameFor(model => model.Address)*@
+                        Dirección
                     </th>
                     <th></th>
                 </tr>
@@ -37,7 +45,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.SpplierCode)
+                            @Html.DisplayFor(modelItem => item.SupplierCode)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.SupplierName)
@@ -52,9 +60,13 @@
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-dark" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-dark" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-dark" })*@
+
+                            <a href="@Url.Action("Edit","Suppliers",new { id=item.Id })">Editar</a> |
+                            <a href="@Url.Action("Details","Suppliers",new { id=item.Id })">Detalles</a> |
+                            <a href="@Url.Action("Delete","Suppliers",new { id=item.Id })">Eliminar</a>
                         </td>
                     </tr>
                 }

@@ -1,24 +1,24 @@
 ﻿@model ControlInventario.Models.Supplier
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
 <div class="masthead">
     <div class="masthead-content space">
         <div class="container">
-            <h2>Details</h2>
+            <h2>Detalles</h2>
 
             <div>
-                <h4>Supplier</h4>
+                <h4>Proveedor</h4>
                 <hr />
                 <dl class="dl-horizontal">
                     <dt>
-                        @Html.DisplayNameFor(model => model.SpplierCode)
+                        @Html.DisplayNameFor(model => model.SupplierCode)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.SpplierCode)
+                        @Html.DisplayFor(model => model.SupplierCode)
                     </dd>
 
                     <dt>
@@ -55,10 +55,20 @@
 
                 </dl>
             </div>
-            <p>
+
+            @*<p>
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
+                @Html.ActionLink("Regresar", "Index")
+            </p>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @*<input type="submit" value="Guardar" class="btn btn-primary" />*@
+                    <a href="@Url.Action("Index","Suppliers")" class="btn btn-outline-danger">Regresar</a>
+
+                </div>
+            </div>
+
 
         </div>
     </div>

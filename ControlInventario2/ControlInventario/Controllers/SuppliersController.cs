@@ -46,7 +46,7 @@ namespace ControlInventario.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SpplierCode,SupplierName,Email,Phone,Address")] Supplier supplier)
+        public ActionResult Create([Bind(Include = "Id,SupplierCode,SupplierName,Email,Phone,Address")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace ControlInventario.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SpplierCode,SupplierName,Email,Phone,Address")] Supplier supplier)
+        public ActionResult Edit([Bind(Include = "Id,SupplierCode,SupplierName,Email,Phone,Address")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {

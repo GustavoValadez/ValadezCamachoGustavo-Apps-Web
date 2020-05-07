@@ -7,30 +7,40 @@
 <div class="masthead">
     <div class="masthead-content space">
         <div class="container">
-            <h2>Index</h2>
+
+            <h2>Productos</h2>
 
             <p>
-                @Html.ActionLink("Create New", "Create")
+                @*@Html.ActionLink("Crear Nuevo", "Create")*@
+                <a href="@Url.Action("Create","Products")" class="btn btn-sm btn-primary m-2">Nuevo Producto</a>
+
             </p>
+
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Supplier.SupplierName)
+                        @*@Html.DisplayNameFor(model => model.Supplier.SupplierName)*@
+                        Nombre del Proveedor
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ProductCode)
+                        @*@Html.DisplayNameFor(model => model.ProductCode)*@
+                        Código de Producto
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ProductName)
+                        @*@Html.DisplayNameFor(model => model.ProductName)*@
+                        Nombre del Producto
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Description)
+                        @*@Html.DisplayNameFor(model => model.Description)*@
+                        Descripción
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Quantity)
+                        @*@Html.DisplayNameFor(model => model.Quantity)*@
+                        Cantidad
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Price)
+                        @*@Html.DisplayNameFor(model => model.Price)*@
+                        Precio
                     </th>
                     <th></th>
                 </tr>
@@ -57,9 +67,14 @@
                             @Html.DisplayFor(modelItem => item.Price)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            @*@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class="btn btn-sm btn-outline-dark"}) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-dark" }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-dark" })*@
+
+                            <a href="@Url.Action("Edit","Products", new { id=item.Id })">Editar</a> |
+                            <a href="@Url.Action("Details","Products",new { id=item.Id })">Detalles</a> |
+                            <a href="@Url.Action("Delete","Products",new { id=item.Id })">Eliminar</a>
+
                         </td>
                     </tr>
                 }
