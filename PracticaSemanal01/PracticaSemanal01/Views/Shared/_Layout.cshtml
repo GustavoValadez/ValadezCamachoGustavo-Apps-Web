@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Práctica Semanal 1 (Eventos) </title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/all.css")
+    @*< link href = "~/Content/all.css" rel = "stylesheet" />*@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @*<div class="navbar navbar-light bg-dark">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Práctica Semanal 1 (Eventos)", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+
+                    <li>@Html.ActionLink("Ciudades", "Index", "Cities")</li>
+                    <li>@Html.ActionLink("Eventos", "Index", "Events")</li>
+
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>*@
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="@Url.Action("Index","Home")">Práctica Semanal 1 (Eventos)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse pull-right" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index","Home")">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index","Cities")">Ciudades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index","Events")">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About","Home")">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact","Home")">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - PS1: Valadez Camacho Gustavo</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

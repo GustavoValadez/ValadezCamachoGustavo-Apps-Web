@@ -1,0 +1,73 @@
+﻿@model PracticaSemanal01.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div class="jumbotron">
+
+    <div>
+        <h4>Evento</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @*@Html.DisplayNameFor(model => model.City.CityName)*@
+                <label class="control-label font-weight-bolder">Ciudad</label>
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City.CityName)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Title)*@
+                <label class="control-label font-weight-bolder">Título</label>
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+                <label class="control-label font-weight-bolder">Fecha</label>
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Location)*@
+                <label class="control-label font-weight-bolder">Lugar de presentación</label>
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <a href="@Url.Action("Index","Events")" class="btn btn-outline-primary">Cancelar</a>
+
+        </div>
+    </div>
+
+    @*<p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+
+
+</div>
+

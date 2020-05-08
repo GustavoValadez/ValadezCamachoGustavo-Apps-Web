@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PracticaSemanal01.Models.City>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ciudades</h2>
+
+<div class="jumbotron">
+
+    @*<div class="row col-md-12">
+            <div class="col-md-12 bg-dark">
+                <h4 class="text-center bg-dark text-white">LISTA DE CIUDADES</h4>
+            </div>
+        </div>*@
+
+    <div class="card bg-dark text-white">
+        <img src="~/Content/img/Listas03.jpg" class="card-img" alt="">
+        <div class="card-img-overlay m-2">
+            <h2 class="card-title text-center ">LISTA DE CIUDADES</h2>
+        </div>
+    </div>
+
+    <p class="m-3">
+        @*@Html.ActionLink("Añadir Ciudad", "Create", null, new { @class="btn btn-sm-primary"})*@
+        <a href="@Url.Action("Create","Cities")" class="btn btn-sm btn-primary">Añadir Ciudad</a>
+    </p>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                <i class="fas fa-map-marker-alt"></i>
+                @*@Html.DisplayNameFor(model => model.CityName)*@
+                Ciudad
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.State)*@
+                Estado
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Country)*@
+                País
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+
+                    @*Botones Forma 1*@
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+
+                    @*Botones Forma 2*@
+                    @*<a href="@Url.Action("Edit","Cities", new { id=item.Id })">Editar</a> |
+                        <a href="@Url.Action("Details","Cities", new { id=item.Id })">Detalles</a> |
+                        <a href="@Url.Action("Delete","Cities", new { id=item.Id })">Eliminar</a> |*@
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>
+
+
