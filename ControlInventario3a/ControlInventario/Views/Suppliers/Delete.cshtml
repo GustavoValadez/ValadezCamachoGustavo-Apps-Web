@@ -1,0 +1,83 @@
+﻿@model ControlInventario.Models.Supplier
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<div class="masthead">
+    <div class="masthead-content space">
+        <div class="container">
+            <h2>Eliminar</h2>
+
+            <h3>¿Estas seguro de que deseas eliminarlo?</h3>
+            <div>
+                <h4>Proveedor</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SupplierCode)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SupplierCode)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SupplierName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SupplierName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @*<div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Regresar", "Index")
+                    </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Eliminar" class="btn btn-primary" />
+                            <a href="@Url.Action("Index","Suppliers")" class="btn btn-outline-danger">Cancelar</a>
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
