@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ControlInventario.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="masthead">
+    <div class="masthead-content space">
+        <div class="container">
+
+            <h2>Proveedores</h2>
+
+            <p>
+                @*@Html.ActionLink("Crear Nuevo", "Create")*@
+                <a href="@Url.Action("Create","Suppliers")" class="btn btn-sm btn-primary btn-icon-split m-2">
+                    <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
+                    <span class="text">Nuevo Proveedor</span>
+                
+                </a>
+
+            </p>
+
+            <div class="row justify-content-center">
+                <p>
+                    Lista de Proveedores
+                </p>
+            </div>
+
+
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-xl-3 col-md-3 mb-4">
+
+                        <a href="@Url.Action("Details","Suppliers", new { id=item.Id })">
+
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">@item.SupplierName</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@item.SupplierCode</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-store fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </a>
+
+                    </div>
+                }
+    
+
+            </div>
+
+          
+
+        </div>
+    </div>
+</div>
+

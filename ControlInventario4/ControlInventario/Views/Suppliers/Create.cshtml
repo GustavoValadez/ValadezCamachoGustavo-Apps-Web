@@ -1,0 +1,91 @@
+﻿@model ControlInventario.Models.Supplier
+
+@{
+    ViewBag.Title = "Crear Proveedor";
+}
+
+<div class="masthead">
+    <div class="masthead-content space">
+        <div class="container">
+            <h2>Crear Proveedor</h2>
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Proveedores</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.SupplierCode, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="col-md-4">Código de Proveedor</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SupplierCode, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SupplierCode, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.SupplierName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="col-md-4">Nombre del Proveedor</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SupplierName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SupplierName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="col-md-4">Correo Electrónico</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="col-md-4">Teléfono</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="col-md-4">Dirección</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Crear" class="btn btn-primary" />
+                        <a href="@Url.Action("Index","Suppliers")" class="btn btn-outline-danger">Cancelar</a>
+
+                    </div>
+                </div>
+
+
+            </div>
+            }
+
+            @*<div>
+                @Html.ActionLink("Regresar", "Index")
+            </div>*@
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
