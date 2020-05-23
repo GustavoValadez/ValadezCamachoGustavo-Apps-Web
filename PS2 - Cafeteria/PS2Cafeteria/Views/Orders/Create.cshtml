@@ -1,0 +1,95 @@
+﻿@model PS2Cafeteria.Models.Order
+
+@{
+    ViewBag.Title = "Nuevo Pedido";
+}
+
+<h2>Nuevo Pedido</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Pedidos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b>@Html.LabelFor(model => model.Client, htmlAttributes: new { @class = "control-label col-md-2" }) </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Client, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Client, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            
+            <label class="col-md-4"><b>Café</b></label>
+            <div class="col-md-10">
+                @Html.DropDownList("CoffeeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <b>@Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" }) </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*<b>@Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" }) </b>*@
+            <b><label class="col-md-2">Café</label></b>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })*@
+
+                <select name="CoffeeId" class="form-control" id="">
+                    <option selected disable>Elige una opción</option>
+                    @foreach (var item in ViewBag.Coffees)
+                    {
+                        <option value="@item.Id">@item.CoffeeName - $ @item.Price</option>
+
+                    }
+
+
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>@Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" }) </b>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })*@
+
+                <select class="form-control" name="Status">
+                    <option>Elegir estado del pedido</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Servido">Servido</option>
+                    <option value="En Proceso">En Proceso</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear Pedido" class="btn btn-dark" />
+                <a href="@Url.Action("Index","Orders")" class="btn btn-outline-dark">Cancelar</a>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

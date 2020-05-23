@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PS2Cafeteria.Models.Coffee>
+
+@{
+    ViewBag.Title = "Cafés";
+}
+
+<h2>Cafés</h2>
+
+<p>
+    @*@Html.ActionLink("Nuevo Café", "Create")*@
+    <a href="@Url.Action("Create","Coffees")" class="btn btn-sm btn-dark m-2">Nuevo Café</a>
+</p>
+
+<div class="card text-center">
+    <div class="card-header bg-dark font-weight-bold text-white">
+        TABLA DE CAFÉS DISPONIBLES
+    </div>
+    <div class="card-body">
+
+        <table class="table table-sm">
+            <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.CoffeeName)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Imagen)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoffeeName)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+            }
+
+        </table>
+
+
+    </div>
+    <div class="card-footer text-muted bg-dark">
+        <i class="fas fa-mug-hot"></i>
+    </div>
+</div>
+
+
+
+
+
+
+

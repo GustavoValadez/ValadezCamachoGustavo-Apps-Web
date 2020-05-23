@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+@{
+    ViewBag.Title = "Cafetería Tec - Index";
+}
+
+<h2>Cafetería Tec</h2>
+<h6>(Solo personal autorizado.)</h6>
+
+@if (User.Identity.IsAuthenticated)
+{
+<div>
+    <div>
+        <h1 class="text-center"><b>¡Bienvenido!</b></h1>
+        <h5 class="text-center">@User.Identity.GetUserName()</h5>
+        <h4 class="text-center"><b>Elija la opción que desee realizar hoy.</b></h4>
+    </div>
+
+    <div class="text-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/img/coffee-a1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/img/coffee-a2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/img/coffee-a3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/img/coffee-a4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+    
+
+
+    
+
+
+
+
+}
+
+

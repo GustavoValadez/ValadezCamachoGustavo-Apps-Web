@@ -1,0 +1,185 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Contacto - Cafetería Tec</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="~/Content/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/business-casual.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+
+        <span class="site-heading-lower">Cafetería Tec</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="@Url.Action("Index","Home")">Cafetería Tec</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Home")">
+                            Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Menu")">Menú</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("About","Home")">Acerca de</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact","Home")">Contacto</a>
+                    </li>
+
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Coffees")">Cafés</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Orders")">Pedidos</a>
+                    </li>
+
+                    @*<li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Register","Account")">Registrarse</a>
+                    </li>*@
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Login","Account")">Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper"></span>
+                            <span class="section-heading-lower">Contacto</span>
+                        </h2>
+                        <p class="mb-0">
+
+
+                            <h3>Puedes ponerte en contacto con nosotros a través de los siguientes medios:</h3>
+                            <br>
+
+                            <address class="text-left mr-4">
+
+                                <i class="fas fa-map-marker-alt text-black mr-4 mt-4"></i>Calzada Tec, Otay, CP 22000, Tijuana, BC. <br>
+                                <i class="fas fa-phone text-black mr-4 mt-4"></i>Tel 664 - 111 1111 <br>
+                                <i class="fas fa-envelope text-black mr-4 mt-4"></i><i></i>Email cafeteriatec@gmail.com <br>
+                                <i class="fas fa-hashtag  mr-4 mt-4"></i>FB CafeteriaTec <br>
+                                <i class="fas fa-at mr-4 mt-4"></i>TW CafeteriaTec <br>
+                                <i class="fas fa-at mr-4 mt-4"></i>IG CafeteriaTec <br>
+                            </address>
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; Cafetería Tec 2020 : por Valadez Camacho Gustavo.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+@*------------------------------------------------------------------------------------------------------------*@
+@*------------------------------------------------------------------------------------------------------------*@
+@*Vista de Acerca de, antes de poner Layout Null*@
+
+@*@{
+        ViewBag.Title = "Contacto";
+    }
+
+
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper"></span>
+                            <span class="section-heading-lower">Contacto</span>
+                        </h2>
+                        <p class="mb-0">
+
+
+                            <h3>Puedes ponerte en contacto con nosotros a través de los siguientes medios:</h3>
+                            <br>
+
+                            <address class="text-left mr-4">
+
+                                <i class="fas fa-map-marker-alt text-black mr-4 mt-4"></i>Calzada Tec, Otay, CP 22000, Tijuana, BC. <br>
+                                <i class="fas fa-phone text-black mr-4 mt-4"></i>Tel 664 - 111 1111 <br>
+                                <i class="fas fa-envelope text-black mr-4 mt-4"></i><i></i>Email cafeteriatec@gmail.com <br>
+                                <i class="fas fa-hashtag  mr-4 mt-4"></i>FB CafeteriaTec <br>
+                                <i class="fas fa-at mr-4 mt-4"></i>TW CafeteriaTec <br>
+                                <i class="fas fa-at mr-4 mt-4"></i>IG CafeteriaTec <br>
+                            </address>
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+@*------------------------------------------------------------------------------------------------------------*@
+@*------------------------------------------------------------------------------------------------------------*@
+

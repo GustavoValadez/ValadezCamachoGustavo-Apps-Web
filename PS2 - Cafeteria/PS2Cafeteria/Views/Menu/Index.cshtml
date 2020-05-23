@@ -1,0 +1,325 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Contacto - Cafetería Tec</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="~/Content/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/business-casual.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+
+        <span class="site-heading-lower">Cafetería Tec</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="@Url.Action("Index","Home")">Cafetería Tec</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Home")">
+                            Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Menu")">Menú</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("About","Home")">Acerca de</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact","Home")">Contacto</a>
+                    </li>
+
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Coffees")">Cafés</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Orders")">Pedidos</a>
+                    </li>
+
+                    @*<li class="nav-item px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Register","Account")">Registrarse</a>
+                        </li>*@
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Login","Account")">Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <h2 class="text-center text-white font-weight-light m-3"><b>Menú</b></h2>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="container mb-5">
+            <a href="@Url.Action("Create","Coffees")" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50"> <i class="fas fa-plus"></i> </span>
+                <span class="text">Agregar Café</span>
+            </a>
+
+        </div>
+
+
+    }
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-xl-3 col-md-3 mb-3">
+
+                        <div class="card h-100">
+                            <img src="@Url.Action("getImage", "Menu", new { id=item.Id})" class="card-img-top" alt="...">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title"> <b>@item.CoffeeName</b> </h5>
+
+                                <a href="@Url.Action("Details","Menu", new { id=item.Id })" class="btn btn-primary btn-icon-split">
+                                    <span class="icon text-white-50"> <i class="fas fa-info-circle"></i> </span>
+                                    <span class="text">Detalles</span>
+                                </a>
+
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <hr />
+
+                                    <a href="@Url.Action("Edit","Coffees", new { id=item.Id })" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50"> <i class="fas fa-edit"></i> </span>
+                                        <span class="text">Editar</span>
+                                    </a>
+                                    <a href="@Url.Action("Delete","Coffees", new { id=item.Id })" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50"> <i class="fas fa-trash-alt"></i> </span>
+                                        <span class="text">Eliminar</span>
+
+
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </section>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        // Poner aquí el elemento que queremos que aparezca solo si el usuario esta autenticado
+    }
+
+
+
+
+
+
+
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <p class="m-0 small">Copyright &copy; Cafetería Tec 2020 : por Valadez Camacho Gustavo.</p>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+@*------------------------------------------------------------------------------------------------------------*@
+@*------------------------------------------------------------------------------------------------------------*@
+@*Vista de Acerca de, antes de poner Layout Null*@
+
+
+@*@model IEnumerable<PS2Cafeteria.Models.Coffee>
+
+    @{
+        ViewBag.Title = "Menú";
+    }
+
+    <h2>Menú</h2>
+
+
+    <div class="row col-12 text-center">
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/01-Latte.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/2","Menu")" class=" card-title card-link"><b>Latte</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/02-Latte-Vainilla.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/3","Menu")" class=" card-title card-link"><b>Latte Vainilla</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/03-Cappuccino.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/4","Menu")" class=" card-title card-link"><b>Cappuccino</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/04-Espresso.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/5","Menu")" class=" card-title card-link"><b>Espresso</b></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/05-Chocolate-Caliente.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/6","Menu")" class=" card-title card-link"><b>Chocolate Caliente</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/06-Macchiato-Caramelo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/7","Menu")" class=" card-title card-link"><b>Frappuccino Chocolate</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/07-Frappuccino-Chocolate.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/8","Menu")" class=" card-title card-link"><b>Frappuccino Caramelo</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/08-Frappuccino-Caramelo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/9","Menu")" class=" card-title card-link"><b>Frappuccino Vainilla</b></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/09-Frappuccino-Vainilla.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/10","Menu")" class=" card-title card-link"><b>Latte Helado</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/10-Latte-Helado.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/11","Menu")" class=" card-title card-link"><b>Latte Vainilla Helado</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/11-Latte-Vainilla-Helado.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/12","Menu")" class=" card-title card-link"><b>Macchiato Caramelo</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mb-4">
+            <div class="card h-100">
+                <img src="~/Content/img/12-Macchiato-Caramelo-Helado.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <a href="@Url.Action("Details/13","Menu")" class=" card-title card-link"><b>Macchiato Caramelo Helado</b></a>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>*@
+
+@*------------------------------------------------------------------------------------------------------------*@
+@*------------------------------------------------------------------------------------------------------------*@
+
+
